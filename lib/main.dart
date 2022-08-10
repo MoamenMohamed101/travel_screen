@@ -106,10 +106,11 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      makeItem('assets/images/canada.jpg'),
-                      makeItem('assets/images/greece.jpg'),
-                      makeItem('assets/images/Italy.jpg'),
-                      makeItem('assets/images/united-states.jpg'),
+                      makeItem('assets/images/canada.jpg', 'Canada'),
+                      makeItem('assets/images/greece.jpg', 'Greece'),
+                      makeItem('assets/images/Italy.jpg', 'Italy'),
+                      makeItem(
+                          'assets/images/united-states.jpg', 'United States'),
                     ],
                   ),
                 )
@@ -121,7 +122,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  makeItem(image) {
+  makeItem(image, title) {
     return AspectRatio(
       aspectRatio: 1 / 1,
       child: Container(
@@ -131,6 +132,26 @@ class _HomePageState extends State<HomePage> {
           image: DecorationImage(
             image: AssetImage(image),
             fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(.8),
+                Colors.black.withOpacity(.2),
+              ],
+            ),
+          ),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
           ),
         ),
       ),
