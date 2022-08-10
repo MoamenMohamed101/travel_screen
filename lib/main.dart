@@ -29,6 +29,27 @@ class _HomePageState extends State<HomePage> {
             fit: BoxFit.cover,
           ),
         ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(.6),
+                Colors.black.withOpacity(.1),
+              ],
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 40),
+                height: 50,
+                color: Colors.white,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
