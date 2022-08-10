@@ -34,19 +34,46 @@ class _HomePageState extends State<HomePage> {
             gradient: LinearGradient(
               begin: Alignment.bottomRight,
               colors: [
-                Colors.black.withOpacity(.6),
-                Colors.black.withOpacity(.1),
+                Colors.black.withOpacity(.8),
+                Colors.black.withOpacity(.2),
               ],
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              const Text(
+                'What you would like to find?',
+                //textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
               Container(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50),
+                ),
                 margin: const EdgeInsets.symmetric(horizontal: 40),
                 height: 50,
-                color: Colors.white,
-              )
+                child: const TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                    hintText: 'Search for cities, places',
+                    hintStyle: TextStyle(fontSize: 15, color: Colors.grey),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),
